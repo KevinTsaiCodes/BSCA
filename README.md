@@ -1,4 +1,4 @@
-# BSCA (Brain Slices Classification Algorithms): A novel algorithm for classifying MRI brain slice images using ResNet.
+# BSCA (Brain Slices Classification Algorithms): A Novel Algorithm for Classifying MRI Brain Slice Images based on ResNet Technique.
 ![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]
 
 [cc-by-nc-sa-shield]: https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg
