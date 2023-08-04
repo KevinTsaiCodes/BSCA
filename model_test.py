@@ -31,7 +31,7 @@ def predict_image(image_path, model_path):
 
     # Load the model instance and its weights
     model = ResNet(BasicBlock, [2, 2, 2, 2], num_classes=len(class_mapping))
-    model.load_state_dict(torch.load(model_path, map_location=torch.device('cpu')))
+    model.load_state_dict(torch.load(model_path, map_location=torch.device('cuda')))
     model.eval()
 
     with torch.no_grad():
@@ -44,8 +44,8 @@ def predict_image(image_path, model_path):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument("-i", "--image_path", type=str, required=True, help="path to the input image")
-    parser.add_argument("-m", "--model_path", type=str, required=True, help="path to the trained model")
+    parser.add_argument("-i", "--image_path", type=str, required=True, help="path/to/the/input/image")
+    parser.add_argument("-m", "--model_path", type=str, required=False, default="model/brain_slice_classifier_model.pt", help="path/to/the/trained/model")
     args = parser.parse_args()
 
     result = predict_image(args.image_path, args.model_path)
