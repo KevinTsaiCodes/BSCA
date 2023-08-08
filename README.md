@@ -35,7 +35,7 @@ BSCA (Brain Slices Classification Algorithms) is an innovative approach for accu
 
 #### Testing
       
-    python model.py --IMAGE_PATH path/to/input/image --MODEL_PATH path/to/model
+    python model_test.py --IMAGE_PATH path/to/input/image --MODEL_PATH path/to/model
 
 
 ##### To set different settings, add **--image_path**, **--model_path** as you need.
@@ -43,7 +43,7 @@ BSCA (Brain Slices Classification Algorithms) is an innovative approach for accu
 
 ### Demo
 
-    python model.py --image_path testing/class1_0.jpg --model_path model/brain_slice_classifier_model.pt
+    python model_test.py --image_path testing/class1_0.jpg --model_path model/brain_slice_classifier_model.pt
 
 ### Results
 ![class1_0.jpg](testing%2Fclass1_0.jpg)
