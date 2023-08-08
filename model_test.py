@@ -5,7 +5,7 @@ from PIL import Image
 import argparse
 
 # Import the ResNet model and the BasicBlock class from your training script
-from train import ResNet, BasicBlock
+from model import ResNet, BasicBlock
 
 # Define the class mapping (index to class name) used during training
 class_mapping = {
