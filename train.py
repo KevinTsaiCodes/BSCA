@@ -163,8 +163,8 @@ def main(batch_s, n_epochs, lr) -> None:
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument("-b", "--batch_size", type=int, default=8, help="batch size")
-    parser.add_argument("-n", "--n_epochs", type=int, default=30, help="number of epochs")
-    parser.add_argument("-l", "--lr", type=float, default=0.001, help="learning rate")
+    parser.add_argument("-b", "--batch_size", type=int, default=8, help="batch size", required=False)
+    parser.add_argument("-n", "--n_epochs", type=int, default=30, help="number of epochs", required=False)
+    parser.add_argument("-l", "--lr", type=float, default=0.001, help="learning rate", required=False)
     args = parser.parse_args()
     main(args.batch_size, args.n_epochs, args.lr)
