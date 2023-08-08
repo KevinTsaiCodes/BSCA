@@ -48,3 +48,4 @@ BSCA (Brain Slices Classification Algorithms) is an innovative approach for accu
 
 ### Results
 ![class1_0.jpg](testing%2Fclass1_0.jpg)
+![螢幕擷取畫面 2023-08-09 051804](https://github.com/KevinTsaiCodes/BSCA/assets/53148219/0a426b1e-4e17-44c1-a489-9f841284f8b0)
