@@ -162,9 +162,10 @@ def main(batch_s, n_epochs, lr) -> None:
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(description="This is is a training script for the brain slice classifier."
+                                                 "Type 'python3 train.py -h' for more information.")
     parser.add_argument("-b", "--batch_size", type=int, default=8, help="batch size", required=False)
-    parser.add_argument("-n", "--n_epochs", type=int, default=30, help="number of epochs", required=False)
-    parser.add_argument("-l", "--lr", type=float, default=0.001, help="learning rate", required=False)
+    parser.add_argument("-n", "--n_epochs", type=int, default=10, help="number of epochs", required=False)
+    parser.add_argument("-lr", "--learning_rate", type=float, default=0.001, help="learning rate", required=False)
     args = parser.parse_args()
-    main(args.batch_size, args.n_epochs, args.lr)
+    main(args.batch_size, args.n_epochs, args.learning_rate)

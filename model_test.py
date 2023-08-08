@@ -43,7 +43,9 @@ def predict_image(image_path, model_path):
     return predicted_class
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(description="This is a script to predict the class of an image"
+                                                 " using a trained model. Type python predict_image.py"
+                                                 " -h for more information")
     parser.add_argument("-i", "--image_path", type=str, required=True, help="path/to/the/input/image")
     parser.add_argument("-m", "--model_path", type=str, required=False, default="model/brain_slice_classifier_model.pt", help="path/to/the/trained/model")
     args = parser.parse_args()
