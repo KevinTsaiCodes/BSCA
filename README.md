@@ -26,20 +26,19 @@ BSCA (Brain Slices Classification Algorithms) is an innovative approach for accu
 
 ## Getting Started
 ### Usage
-- Training
-
+#### Training
 
     python train.py --BATCH_SIZE batch_size --N_EPOCH epochs --LEARNING_RATE learning_rate
  
-- To train with different settings, add **--batch_size**, **--n_epochs**, **--learing_rate** as you need.
+##### To train with different settings, add **--batch_size**, **--n_epochs**, **--learing_rate** as you need.
 
 
-- Testing
-        
+#### Testing
       
     python model.py --IMAGE_PATH path/to/input/image --MODEL_PATH path/to/model
 
-- To set different settings, add **--image_path**, **--model_path** as you need.
+
+##### To set different settings, add **--image_path**, **--model_path** as you need.
 
 
 ### Demo
