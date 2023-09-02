@@ -8,6 +8,8 @@ import numpy as np
 import argparse
 import matplotlib.pyplot as plt
 from tqdm import tqdm
+from sklearn.metrics import confusion_matrix, precision_score, recall_score, f1_score
+
 
 class BasicBlock(nn.Module):
     expansion = 1
@@ -107,13 +109,17 @@ def main(batch_s, n_epochs, lr) -> None:
     # Track training accuracy and loss for each epoch
     train_accuracy = []
     train_loss = []
-
+    train_precision = []
+    train_recall = []
+    train_f1 = []
     # Use tqdm to create a progress bar for the epochs
     for epoch in tqdm(range(num_epochs), desc='Training', unit='epoch'):
         model.train()
         total_correct = 0
         total_samples = 0
         total_loss = 0
+        all_preds = []
+        all_labels = []
 
         for images, labels in tqdm(train_loader, desc=f'Epoch {epoch + 1}', leave=False):
             images, labels = images.to(device), labels.to(device)
@@ -126,16 +132,31 @@ def main(batch_s, n_epochs, lr) -> None:
             loss = criterion(outputs, labels)
             total_loss += loss.item()
 
+            all_preds.extend(preds.tolist())
+            all_labels.extend(labels.tolist())
+
             optimizer.zero_grad()
             loss.backward()
             optimizer.step()
 
         epoch_accuracy = total_correct / total_samples
         epoch_loss = total_loss / len(train_loader)
+        epoch_precision = precision_score(all_labels, all_preds, average='weighted')
+        epoch_recall = recall_score(all_labels, all_preds, average='weighted')
+        epoch_f1 = f1_score(all_labels, all_preds, average='weighted')
+
         train_accuracy.append(epoch_accuracy)
         train_loss.append(epoch_loss)
+        train_precision.append(epoch_precision)
+        train_recall.append(epoch_recall)
+        train_f1.append(epoch_f1)
 
-        print(f"Epoch [{epoch + 1}/{num_epochs}] - Train Accuracy: {epoch_accuracy:.4f}, Train Loss: {epoch_loss:.4f}")
+        print(f"Epoch [{epoch + 1}/{num_epochs}] - "
+              f"Train Accuracy: {epoch_accuracy:.4f}, "
+              f"Train Loss: {epoch_loss:.4f}, "
+              f"Precision: {epoch_precision:.4f}, "
+              f"Recall: {epoch_recall:.4f}, "
+              f"F1 Score: {epoch_f1:.4f}")
 
     plt.figure(figsize=(8, 6))
     plt.plot(range(1, num_epochs+1), train_accuracy, label='Train Accuracy')
