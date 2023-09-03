@@ -2,7 +2,7 @@
 
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FKevinTsaiCodes%2FBSCA&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 
-![training_progress.png](plotting_result%2Ftraining_progress.png)
+
 ## Introduction
 BSCA (Brain Slices Classification Algorithms) is an innovative approach for accurately classifying MRI brain slice images using advanced ResNet (Residual Network) techniques. Leveraging the power of deep learning, BSCA is designed to automatically analyze and categorize MRI brain slices with exceptional precision. By employing ResNet's sophisticated architecture, BSCA enhances the model's ability to capture intricate features and patterns within the brain images, enabling improved classification accuracy. This novel algorithm holds promising potential for assisting medical professionals in diagnosing and understanding brain conditions from MRI data, contributing to more efficient and accurate healthcare assessments.
 
