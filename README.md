@@ -8,6 +8,15 @@ BSCA (Brain Slices Classification Algorithms) is an innovative approach for accu
 
 **Author**: Wei-Chun Kevin Tsai
 
+### Preparing Data
+1. To build **training** dataset, you'll also need following datasets. All the images need to be **cropped into a square**, converted to **grayscale**, and resize into at least **640*640**.
+- [ADNI 2](https://adni.loni.usc.edu/)
+- [ADNI 2](https://adni.loni.usc.edu/)
+
+2. To build **validation/testing** dataset, you'll also need following datasets. All the images need to be **cropped into a square**, converted to **grayscale**, and resize into at least **640*640**.
+- [ADNI 2](https://adni.loni.usc.edu/)
+- [ADNI 3](https://adni.loni.usc.edu/)
+
 ## Requirements
 ### Dependencies
 - Python 3.8+
